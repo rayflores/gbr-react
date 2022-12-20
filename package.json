@@ -1,7 +1,7 @@
 {
   "name": "assessment",
   "version": "1.0.0",
-  "description": "This is the assessment for incoming developers aimed toward experience with WordPress combined with a JavaScript-centric front-end.",
+  "description": "This is the assessment for beginner WordPress developers.",
   "devDependencies": {
     "@wordpress/env": "^5.8.0",
     "@wordpress/scripts": "^25.0.0"
