@@ -8,6 +8,5 @@
   "mappings": {
     "wp-content/": "./content/"
   },
-  "phpVersion": "7.4",
   "port": 8888
 }
