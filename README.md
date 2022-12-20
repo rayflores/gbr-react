@@ -54,10 +54,15 @@ the `./bin/wp.sh` which should make things a bit easier.
 - Add installation and instructions for running your code in your README.
 - I need to be able to independently run whatever you produce locally, so I can see the same result you want me to see.
 
-## Preferences
+**Preferences**
 
 - Please don't include your whole database image (if you need to, you can include a database dump, like `dump.sql`).
 - The more automated the better (think fewer steps for the assessor to complete to get things working).
+
+## Information
+
+* [Read about @wordpress/env](https://github.com/WordPress/gutenberg/tree/trunk/packages/env).
+* [Read about @wordpress/scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts).
 
 ## Common Issues
 
