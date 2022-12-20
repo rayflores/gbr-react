@@ -76,8 +76,7 @@ the `./bin/wp.sh` which should make things a bit easier.
   This should give you an idea of what service you need to stop/kill to be able to run this project.
 
   If that doesn't work, edit the ports in `.wp-env.json` and start the instructions over.
-  
-  
+
 * **I'm getting an error running npm install.**
 
   Make sure you're using the right version of `node/npm` as specified above by checking:
@@ -85,4 +84,17 @@ the `./bin/wp.sh` which should make things a bit easier.
   ```shell
   node --version
   npm --version
+  ```
+
+* **I get an error about not being able to connect to mysql**
+
+  Most likely, your Docker app is out of date. Download the latest update for Docker, install it and start it again.
+
+  Once that's done and Docker is back up and running, you'll have to rebuild your environment:
+
+  ```shell
+  npm run env:stop
+  npm run env:destroy
+  npm run env:init
+  npm run env:launch
   ```
