@@ -86,7 +86,7 @@ the `./bin/wp.sh` which should make things a bit easier.
   npm --version
   ```
 
-* **I get an error about not being able to connect to mysql**
+* **I get an error about not being able to connect to mysql.**
 
   Most likely, your Docker app is out of date. Download the latest update for Docker, install it and start it again.
 
