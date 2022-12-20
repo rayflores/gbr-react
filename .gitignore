@@ -5,4 +5,4 @@ content/index.php
 content/uploads/*
 content/plugins/*
 content/themes/*
-!content/themes/headless/*
+!content/themes/assessment/*
