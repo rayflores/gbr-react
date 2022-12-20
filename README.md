@@ -1,37 +1,88 @@
-# WordPress Developer Assessment
+# Beginner WordPress Assessment
 
-This is our standard assessment for incoming WordPress developers aimed toward experience with WordPress.
+This is our standard assessment for incoming WordPress developers aimed toward basic experience with WordPress.
 
 Please follow the steps below and turn it in to us when you are done!
 
+> NOTE: Anything marked as 'BONUS' is **NOT** required and is only there if you feel like showing off. That being said,
+> feel free to show off. Have fun with it!
+
+## Setup
+
+> WARNING: This setup assumes a Linux-based system (Linux, macOS, Windows >= 10 w/ WSL) running node version ~18 with
+> npm version ~8 and Docker. If you have trouble running anything, it probably has something to do with the above.
+
+1. Fork this repo, clone it to your local and cd into the directory.
+1. Run `npm install`
+1. Run `npm run env:init`
+1. Run `npm run env:launch`
+
+**Away We Go!**
+
+In a few minutes, you should have a fresh WordPress install up and running with a simple theme named WordPress
+Assessment activated. The service assumes it can run on port 8888, so if there's a conflict there, you'll have to
+edit `.wp-env.json`, run `npm run env:destroy` and then re-run `npm run env:init`.
+
+Any changes made to the `./content/` folder will show up on the WordPress install.
+
+**WP-CLI**
+
+If you need to run any wp-cli commands, it is available via either `npx wp-env run cli [command]` OR, you can use
+the `./bin/wp.sh` which should make things a bit easier.
+
 ## Steps
 
-- [ ] Create a new public repisitory on a service of your choosing (Github, Gitlab or Bitbucket).
-  - Note: You will be sharing this link with us and we'll go over your code together!
-- [ ] Create a new WordPress Docker setup on your local machine using [this link](https://docs.docker.com/samples/wordpress/).
-  - Note: We will do a screenshare and you'll walk us through your local blog.
-- [ ] Create a new theme from scratch and add it to the repo.
-  - Note: Do not use a theme starter/builder/helper or copy paste a previous theme.
-- [ ] Your theme should include the following features:
-  - An asset directory for JS/SCSS with the ability to compile utilizing Gulp or Webpack.
-  - A new custom post type called "Franchise."
-  - A new custom post template called "Franchise Template" (not a page template, but rather a "post template").
-  - Display five (5) of the newest Franchise posts
-    - Display the post:
-      - Thumbnail
-      - Title
-      - Author
-    - Wrap each post in a link to the post
-  - Display in a 3-column layout that responsively wraps down to a single column as the browser width shrinks.
-  - Register your styles/javascript, but ONLY enqueue if on the Franchise template.
-- [ ] Create 10 sample "Franchise" posts through the Dashboard using Gutenberg editor (for live demo purposes).
-- [ ] Create a "Load More" button at the bottom of your Franchise post template.
-  - Using Vanilla JS, add functionality to the "load more" button to pull the next 5 posts and append them to the previous posts list.
-- [ ] Commit all your code to your repo, add a README with clear instructions and send it when you're ready.
+- [ ] Clone or fork this repo, then establish a public repository where your code will live and can be viewed by us.
+- [ ] Create 5 sample posts and 5 pages inside WordPress.
+    - Bonus points: Use wp-cli, or some automated way to do this.
+- [ ] Create a custom "Movie" post type and create 10 sample Movie posts.
+    - [ ] Create a custom "Genre" taxonomy and attach it to the `movie` post type only.
+- [ ] Update the `assessment` theme so it features the following:
+    - [ ] Homepage - 5 Movie Posts
+        - Each post should have a featured image, an excerpt and a link to the movie single post page.
+        - Bonus points: infinite scroll or pagination.
+    - [ ] Single Movie Post (Featured image, title, genre, full text)
+        - Bonus points: Showcase links to other movies.
+    - [ ] Single Post (Featured image, author, title, text)
+    - [ ] Single Page (Can be just title, author and text)
+- [ ] Add instructions on requirements, installation and running everything to your README file.
 
 ## Requirements
 
-- Your repository must be public. If we can't see it, we can't review it.
-- Use Docker so we can run it on our systems.
-- No starter themes. Start from scratch!
-- Add a README with clear instructions for installation and running your code.
+- Ideally you'd use the @wordpress/env (Docker-based) setup so that we can all run this on our machines.
+- Any JavaScript libraries should be installed via package.json.
+- Add installation and instructions for running your code in your README.
+- I need to be able to independently run whatever you produce locally, so I can see the same result you want me to see.
+
+**Preferences**
+
+- Please don't include your whole database image (if you need to, you can include a database dump, like `dump.sql`).
+- The more automated the better (think fewer steps for the assessor to complete to get things working).
+
+## Information
+
+* [Read about @wordpress/env](https://github.com/WordPress/gutenberg/tree/trunk/packages/env).
+* [Read about @wordpress/scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts).
+
+## Common Issues
+
+* **I have an error about port 8888 being in use.**
+
+  You likely already have something running on port 8888. Stop any web services you may already have running, and try
+  again. If that doesn't work, and you're on Mac or Linux, try this:
+  ```shell
+  lsof -i :8888
+  ```
+  This should give you an idea of what service you need to stop/kill to be able to run this project.
+
+  If that doesn't work, edit the ports in `.wp-env.json` and start the instructions over.
+  
+  
+* **I'm getting an error running npm install.**
+
+  Make sure you're using the right version of `node/npm` as specified above by checking:
+  
+  ```shell
+  node --version
+  npm --version
+  ```

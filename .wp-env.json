@@ -1,0 +1,12 @@
+{
+  "core": "WordPress/WordPress#master",
+  "env": {
+    "tests": {
+      "port": 8889
+    }
+  },
+  "mappings": {
+    "wp-content/": "./content/"
+  },
+  "port": 8888
+}

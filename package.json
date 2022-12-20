@@ -1,0 +1,37 @@
+{
+  "name": "assessment",
+  "version": "1.0.0",
+  "description": "This is the assessment for beginner WordPress developers.",
+  "devDependencies": {
+    "@wordpress/env": "^5.8.0",
+    "@wordpress/scripts": "^25.0.0"
+  },
+  "engines": {
+    "node": "~18",
+    "npm": "~8"
+  },
+  "scripts": {
+    "assets:build": "wp-scripts build --webpack-src-dir=./content/themes/assessment/assets/src/ --output-path=./content/themes/assessment/assets/build",
+    "assets:watch:hot": "wp-scripts start --webpack-src-dir=./content/themes/assessment/assets/src/ --output-path=./content/themes/assessment/assets/build --hot",
+    "assets:watch": "wp-scripts start --webpack-src-dir=./content/themes/assessment/assets/src/ --output-path=./content/themes/assessment/assets/build",
+    "env:clean": "wp-env clean all",
+    "env:destroy": "wp-env destroy",
+    "env:init": "wp-env start -- --update",
+    "env:launch": "./bin/wp.sh theme activate assessment && ./bin/wp.sh theme delete --all && ./bin/wp.sh plugin delete --all && open http://localhost:8888/",
+    "env:logs": "wp-env logs",
+    "env:restart": "wp-env stop && wp-env start",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConsumerTrack/assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ConsumerTrack/assessment/issues"
+  },
+  "homepage": "https://github.com/ConsumerTrack/assessment#readme"
+}
