@@ -7,7 +7,7 @@
 <?php
 get_header(); ?>
     <div>
-        <h1>themes/headless/index.php</h1>
+        <h1>themes/assessment/index.php</h1>
         <p>Edit me to make your theme!</p>
         <div class="info-box">
             Log in to admin at <a href="<?php echo esc_url( home_url( 'wp-admin' ) ); ?>">/wp-admin/</a>
