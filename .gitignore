@@ -4,5 +4,4 @@ node_modules/
 content/index.php
 content/uploads/*
 content/plugins/*
-content/themes/*
-!content/themes/assessment/*
+**/assets/build/*
