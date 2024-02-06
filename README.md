@@ -8,8 +8,8 @@ Please follow the steps below and turn it in to us when you are done!
 
 ## Setup
 
-> WARNING: This setup assumes a Linux-based system (Linux, macOS, Windows >= 10 w/ WSL) running node version ~18 with
-> npm version ~8 and Docker. If you have trouble running anything, it probably has something to do with the above.
+> WARNING: This setup assumes a Linux-based system (Linux, macOS, Windows >= 10 w/ WSL) running node version ~18 with ( current:  18.19.0 )
+> npm version ~8 and Docker. If you have trouble running anything, it probably has something to do with the above. ( current: 8.1.0 )
 
 1. Fork this repo, clone it to your local and cd into the directory.
 1. Run `npm install`
